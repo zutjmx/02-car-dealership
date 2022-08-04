@@ -6,8 +6,10 @@ import { CreateCarDto, UpdateCarDto } from './dto';
 
 @Injectable()
 export class CarsService {
+
+    //! Datos en hard code.
     private cars: Car[] = [
-        {
+        /* {
             id: uuid(),
             marca: 'Audi',
             modelo: 'A1'
@@ -36,7 +38,7 @@ export class CarsService {
             id: uuid(),
             marca: 'Saab',
             modelo: 'Linear C 2008 Sport'
-        },
+        }, */
     ];
 
     findAll() {
@@ -99,6 +101,10 @@ export class CarsService {
             (auto) => auto.id !== id
         );
         return;
+    }
+
+    llenarAutosConSeedData(cars: Car[]) {
+        this.cars = cars;
     }
 
 }
